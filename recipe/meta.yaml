@@ -1,29 +1,33 @@
 package:
   name: libradtran
-  version: "2.0.2"
+  version: "2.0.3"
 
+ 
 source:
-  fn: libRadtran-2.0.2.tar.gz
-  md5: 9123d452e9c531cd876359c7a71bf0d8 
-  url: http://www.libradtran.org/download/libRadtran-2.0.2.tar.gz
+  fn: libradtran-2.0.3.tar.gz
+  md5: 8d2fd710eb0e1c35b716c976790c44a6
+  url: http://www.libradtran.org/download/libradtran-2.0.3.tar.gz
 
 requirements:
   build: 
-    - python
+    - python<3
     - gsl>=2.2.1
     - libopenblas
     - make 
-    - gcc 
+    - {{ compiler('c') }}
+    - {{ compiler('fortran') }} 
     - flex 
     - perl
     - libnetcdf
     - patchelf
     - netcdf-fortran
   run:
+    - python>=3.8
     - gsl>=2.2.1
     - libopenblas
+    - {{ compiler('c') }}
+    - {{ compiler('fortran') }} 
     - make 
-    - gcc 
     - flex 
     - perl
     - libnetcdf

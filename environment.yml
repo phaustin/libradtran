@@ -1,11 +1,14 @@
 name: example-environment
 channels:
+  - eoas_ubc
   - conda-forge
-  - f0xy
 dependencies:
-  - python
+  - python>=3.8
   - numpy
   - libradtran
-  - pip:
-    - matplotlib
-    - Py6S
+  - rad_lib
+  - pandas
+  - matplotlib
+  - scipy
+# conda-lock -f environment.yml -p linux-64
+  
